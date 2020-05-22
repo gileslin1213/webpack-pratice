@@ -18,35 +18,29 @@ module.exports = {
     },
     module: {
         rules: [
-            // {
-            //     test: /\.html$/,
-            //     use: [{
-            //         loader: 'file-loader',
-            //         options: {
-            //             name: '[path][name].[ext]'
-            //         }
-            //     }]
-            // },
+            {
+                test: /\.html$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[path][name].[ext]'
+                    }
+                }]
+            },
             {
                 test: /\.(js)$/,
                 use: 'babel-loader'
             },
-
             {
-
                 test: /\.(sass|scss)$/,
-
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
                     "sass-loader"
                 ]
-
             },
             {
-
                 test: /\.css$/,
-
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
             
